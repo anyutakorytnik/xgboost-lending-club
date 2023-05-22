@@ -1,0 +1,671 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Таблица фичей</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="8b563f94-15df-4e0e-904a-fecdc6f9d77b" class="page sans"><header><h1 class="page-title">Таблица фичей</h1></header><div class="page-body"><p id="708f0c67-0c97-4dbd-b570-8584a6a8ef80" class="">
+</p><div id="a671f3c9-feee-4a29-9b32-2ffcc4459c00" class="collection-content"><h4 class="collection-title">Lending club</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>LoanStatNew</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>in_model</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>Fill nans</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Type</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Description</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Comment</th></tr></thead><tbody><tr id="3497b5d6-7c4c-4803-b73b-40ea2d09d6e7"><td class="cell-title"><a href="https://www.notion.so/loan_amnt-3497b5d67c4c4803b73b40ea2d09d6e7">loan_amnt</a></td><td class="cell-lN{W"><span class="selected-value select-value-color-green">yes</span></td><td class="cell-&gt;B^="><span class="selected-value select-value-color-green">-</span></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">The listed amount of the loan applied for by the borrower. If at some point in time, the credit department reduces the loan amount, then it will be reflected in this value.</td><td class="cell-IImX"></td></tr><tr id="ae0f4ca0-97c6-4b10-9c00-8752d8719bd5"><td class="cell-title"><a href="https://www.notion.so/acc_open_past_24mths-ae0f4ca097c64b109c008752d8719bd5">acc_open_past_24mths</a></td><td class="cell-lN{W"><span class="selected-value select-value-color-green">yes</span></td><td class="cell-&gt;B^="><span class="selected-value select-value-color-blue">0</span></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of trades opened in past 24 months.</td><td class="cell-IImX"></td></tr><tr id="cbbad70d-c663-4ecb-ab7e-35c9228bcd64"><td class="cell-title"><a href="https://www.notion.so/annual_inc-cbbad70dc6634ecbab7e35c9228bcd64">annual_inc</a></td><td class="cell-lN{W"><span class="selected-value select-value-color-green">yes</span></td><td class="cell-&gt;B^="><span class="selected-value select-value-color-green">-</span></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">The self-reported annual income provided by the borrower during registration.</td><td class="cell-IImX"></td></tr><tr id="f619d4b2-b87e-4cba-ac53-9c4741b31bcd"><td class="cell-title"><a href="https://www.notion.so/avg_cur_bal-f619d4b2b87e4cbaac539c4741b31bcd">avg_cur_bal</a></td><td class="cell-lN{W"><span class="selected-value select-value-color-green">yes</span></td><td class="cell-&gt;B^="><span class="selected-value select-value-color-default">didn&#x27;t fill too little nans</span></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Average current balance of all accounts</td><td class="cell-IImX">3.6 nans</td></tr><tr id="945e304e-17fa-4b20-bef5-26dee1efff7b"><td class="cell-title"><a href="https://www.notion.so/int_rate-945e304e17fa4b20bef526dee1efff7b">int_rate</a></td><td class="cell-lN{W"><span class="selected-value select-value-color-green">yes</span></td><td class="cell-&gt;B^="><span class="selected-value select-value-color-green">-</span></td><td class="cell-i@`L"><span class="selected-value select-value-color-red">convert_to_int</span></td><td class="cell-vObD">Interest Rate on the loan. Note: Lending Club uses a borrower&#x27;s grade and payment term (30 or months) to assign an interest rate (you can read more about Rates &amp; Fees). This causes variations in interest rate within a given grade.</td><td class="cell-IImX"></td></tr><tr id="71547fb9-30bd-498b-ada3-a9928c18f3ed"><td class="cell-title"><a href="https://www.notion.so/sub_grade-71547fb930bd498bada3a9928c18f3ed">sub_grade</a></td><td class="cell-lN{W"><span class="selected-value select-value-color-green">yes</span></td><td class="cell-&gt;B^="><span class="selected-value select-value-color-green">-</span></td><td class="cell-i@`L"><span class="selected-value select-value-color-default">ordinal_values</span></td><td class="cell-vObD">LC assigned loan subgrade</td><td class="cell-IImX"></td></tr><tr id="f0aa0342-090b-428e-8d60-169c18e25dee"><td class="cell-title"><a href="https://www.notion.so/emp_length-f0aa0342090b428e8d60169c18e25dee">emp_length</a></td><td class="cell-lN{W"><span class="selected-value select-value-color-green">yes</span></td><td class="cell-&gt;B^="><span class="selected-value select-value-color-blue">0</span></td><td class="cell-i@`L"><span class="selected-value select-value-color-default">ordinal_values</span></td><td class="cell-vObD">Employment length in years. Possible values are between 0 and 10 where 0 means less than one year and 10 means ten or more years.</td><td class="cell-IImX"></td></tr><tr id="38dc8f08-c854-49fa-a0a9-65b39446915d"><td class="cell-title"><a href="https://www.notion.so/fico_average-38dc8f08c85449faa0a965b39446915d">fico_average</a></td><td class="cell-lN{W"><span class="selected-value select-value-color-green">yes</span></td><td class="cell-&gt;B^="><span class="selected-value select-value-color-green">-</span></td><td class="cell-i@`L"><span class="selected-value select-value-color-gray">my_feature</span></td><td class="cell-vObD"></td><td class="cell-IImX"></td></tr><tr id="0a81d234-351b-456f-9c8f-37a3c173b6c6"><td class="cell-title"><a href="https://www.notion.so/tot_hi_cred_lim-0a81d234351b456f9c8f37a3c173b6c6">tot_hi_cred_lim</a></td><td class="cell-lN{W"><span class="selected-value select-value-color-pink">no</span></td><td class="cell-&gt;B^="><span class="selected-value select-value-color-default">didn&#x27;t fill too little nans</span></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Total high credit/credit limit</td><td class="cell-IImX"></td></tr><tr id="7a6ef0d3-c2e3-4cae-958d-95acc8a4340b"><td class="cell-title"><a href="https://www.notion.so/installment-7a6ef0d3c2e34cae958d95acc8a4340b">installment</a></td><td class="cell-lN{W"><span class="selected-value select-value-color-pink">no</span></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">The monthly payment owed by the borrower if the loan originates.</td><td class="cell-IImX"></td></tr><tr id="a8d7e308-c583-4869-9595-a3998a94accf"><td class="cell-title"><a href="https://www.notion.so/bc_open_to_buy-a8d7e308c58348699595a3998a94accf">bc_open_to_buy</a></td><td class="cell-lN{W"><span class="selected-value select-value-color-pink">no</span></td><td class="cell-&gt;B^="><span class="selected-value select-value-color-default">didn&#x27;t fill too little nans</span></td><td class="cell-i@`L"><span class="selected-value select-value-color-orange">further_explore</span><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Total open to buy on revolving bankcards.</td><td class="cell-IImX"></td></tr><tr id="edb49ea8-2a94-461d-9f25-14730d6faa06"><td class="cell-title"><a href="https://www.notion.so/dti-edb49ea82a94461d9f2514730d6faa06">dti</a></td><td class="cell-lN{W"><span class="selected-value select-value-color-pink">no</span></td><td class="cell-&gt;B^="><span class="selected-value select-value-color-default">didn&#x27;t fill too little nans</span></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">A ratio calculated using the borrower’s total monthly debt payments on the total debt obligations, excluding mortgage and the requested LC loan, divided by the borrower’s self-reported monthly income.</td><td class="cell-IImX">0.1 nans</td></tr><tr id="602603d2-db6b-4d0f-8aff-b82d3b7f3b70"><td class="cell-title"><a href="https://www.notion.so/term-602603d2db6b4d0f8affb82d3b7f3b70">term</a></td><td class="cell-lN{W"><span class="selected-value select-value-color-pink">no</span></td><td class="cell-&gt;B^="><span class="selected-value select-value-color-green">-</span></td><td class="cell-i@`L"><span class="selected-value select-value-color-purple">ohe_values</span></td><td class="cell-vObD">The number of payments on the loan. Values are in months and can be either 36 or 60.</td><td class="cell-IImX"></td></tr><tr id="cc4eeeb9-fa06-407e-a9eb-a60961b198e5"><td class="cell-title"><a href="https://www.notion.so/home_ownership-cc4eeeb9fa06407ea9eba60961b198e5">home_ownership</a></td><td class="cell-lN{W"><span class="selected-value select-value-color-pink">no</span></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-purple">ohe_values</span></td><td class="cell-vObD">The home ownership status provided by the borrower during registration or obtained from the credit report. Our values are: RENT, OWN, MORTGAGE, OTHER</td><td class="cell-IImX"></td></tr><tr id="ffc9cf72-e201-4db6-97c2-ec259e24724f"><td class="cell-title"><a href="https://www.notion.so/initial_list_status-ffc9cf72e2014db697c2ec259e24724f">initial_list_status</a></td><td class="cell-lN{W"><span class="selected-value select-value-color-pink">no</span></td><td class="cell-&gt;B^="><span class="selected-value select-value-color-green">-</span></td><td class="cell-i@`L"><span class="selected-value select-value-color-purple">ohe_values</span></td><td class="cell-vObD">The initial listing status of the loan. Possible values are – W, F</td><td class="cell-IImX"></td></tr><tr id="02c04ad2-63e5-42ee-aa0e-7cc81df198d1"><td class="cell-title"><a href="https://www.notion.so/sec_app_revol_util-02c04ad263e542eeaa0e7cc81df198d1">sec_app_revol_util</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-default">drop_co_borr</span></td><td class="cell-vObD">Ratio of total current balance to high credit/credit limit for all revolving accounts</td><td class="cell-IImX"></td></tr><tr id="1be3d2eb-aa16-454a-a664-3147a50dd1d6"><td class="cell-title"><a href="https://www.notion.so/sec_app_open_act_il-1be3d2ebaa16454aa6643147a50dd1d6">sec_app_open_act_il</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-default">drop_co_borr</span></td><td class="cell-vObD">Number of currently active installment trades at time of application for the secondary applicant</td><td class="cell-IImX"></td></tr><tr id="2a726586-f192-4ff0-8e26-5900ee72d45d"><td class="cell-title"><a href="https://www.notion.so/sec_app_earliest_cr_line-2a726586f1924ff08e265900ee72d45d">sec_app_earliest_cr_line</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-default">drop_co_borr</span></td><td class="cell-vObD">Earliest credit line at time of application for the secondary applicant</td><td class="cell-IImX"></td></tr><tr id="3b06f46b-dbb4-48e7-885c-f461f6a8ae77"><td class="cell-title"><a href="https://www.notion.so/sec_app_fico_range_high-3b06f46bdbb448e7885cf461f6a8ae77">sec_app_fico_range_high</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-default">drop_co_borr</span></td><td class="cell-vObD">FICO range (low) for the secondary applicant</td><td class="cell-IImX"></td></tr><tr id="446ee1b8-acd8-4dfe-ae7b-9991ecd01c3e"><td class="cell-title"><a href="https://www.notion.so/dti_joint-446ee1b8acd84dfeae7b9991ecd01c3e">dti_joint</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-default">drop_co_borr</span></td><td class="cell-vObD">A ratio calculated using the co-borrowers&#x27; total monthly payments on the total debt obligations, excluding mortgages and the requested LC loan, divided by the co-borrowers&#x27; combined self-reported monthly income</td><td class="cell-IImX"></td></tr><tr id="5e7cb2dd-af4a-41ca-ae7f-de9d21a5ab32"><td class="cell-title"><a href="https://www.notion.so/sec_app_num_rev_accts-5e7cb2ddaf4a41caae7fde9d21a5ab32">sec_app_num_rev_accts</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-default">drop_co_borr</span></td><td class="cell-vObD">Number of revolving accounts at time of application for the secondary applicant</td><td class="cell-IImX"></td></tr><tr id="6652503d-3ce3-4c4c-abf9-c37eb3f57e33"><td class="cell-title"><a href="https://www.notion.so/revol_bal_joint-6652503d3ce34c4cabf9c37eb3f57e33">revol_bal_joint</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-default">drop_co_borr</span></td><td class="cell-vObD">Sum of revolving credit balance of the co-borrowers, net of duplicate balances</td><td class="cell-IImX"></td></tr><tr id="69daa48e-113c-4ead-8e37-af33a7ed566a"><td class="cell-title"><a href="https://www.notion.so/sec_app_open_acc-69daa48e113c4ead8e37af33a7ed566a">sec_app_open_acc</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-default">drop_co_borr</span></td><td class="cell-vObD">Number of open trades at time of application for the secondary applicant</td><td class="cell-IImX"></td></tr><tr id="8996d974-6718-4050-b332-11e4c6c9cbd4"><td class="cell-title"><a href="https://www.notion.so/sec_app_chargeoff_within_12_mths-8996d97467184050b33211e4c6c9cbd4">sec_app_chargeoff_within_12_mths</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-default">drop_co_borr</span></td><td class="cell-vObD">Number of charge-offs within last 12 months at time of application for the secondary applicant</td><td class="cell-IImX"></td></tr><tr id="89f9651b-cdf8-4649-a15c-6e4829dec7a6"><td class="cell-title"><a href="https://www.notion.so/sec_app_inq_last_6mths-89f9651bcdf84649a15c6e4829dec7a6">sec_app_inq_last_6mths</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-default">drop_co_borr</span></td><td class="cell-vObD">Credit inquiries in the last 6 months at time of application for the secondary applicant</td><td class="cell-IImX"></td></tr><tr id="9791888d-e209-4b17-8145-7cf80bc1b070"><td class="cell-title"><a href="https://www.notion.so/annual_inc_joint-9791888de2094b1781457cf80bc1b070">annual_inc_joint</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="><span class="selected-value select-value-color-blue">0</span></td><td class="cell-i@`L"><span class="selected-value select-value-color-default">drop_co_borr</span></td><td class="cell-vObD">The combined self-reported annual income provided by the co-borrowers during registration</td><td class="cell-IImX"></td></tr><tr id="a572e0b3-f3f6-45da-85eb-7d33fd71c906"><td class="cell-title"><a href="https://www.notion.so/application_type-a572e0b3f3f645da85eb7d33fd71c906">application_type</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-default">drop_co_borr</span></td><td class="cell-vObD">Indicates whether the loan is an individual application or a joint application with two co-borrowers</td><td class="cell-IImX"></td></tr><tr id="afd03061-8e16-4b36-bd6f-47417c218291"><td class="cell-title"><a href="https://www.notion.so/sec_app_mort_acc-afd030618e164b36bd6f47417c218291">sec_app_mort_acc</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-default">drop_co_borr</span></td><td class="cell-vObD">Number of mortgage accounts at time of application for the secondary applicant</td><td class="cell-IImX"></td></tr><tr id="cbea0aee-f0c4-4456-894b-7758e08d0565"><td class="cell-title"><a href="https://www.notion.so/sec_app_fico_range_low-cbea0aeef0c44456894b7758e08d0565">sec_app_fico_range_low</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-default">drop_co_borr</span></td><td class="cell-vObD">FICO range (high) for the secondary applicant</td><td class="cell-IImX"></td></tr><tr id="e7f52c0c-82c3-4ce1-bad6-5113634fd0d2"><td class="cell-title"><a href="https://www.notion.so/sec_app_collections_12_mths_ex_med-e7f52c0c82c34ce1bad65113634fd0d2">sec_app_collections_12_mths_ex_med</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-default">drop_co_borr</span></td><td class="cell-vObD">Number of collections within last 12 months excluding medical collections at time of application for the secondary applicant</td><td class="cell-IImX"></td></tr><tr id="05862c09-bba4-46ea-b4cb-4af795d2c751"><td class="cell-title"><a href="https://www.notion.so/deferral_term-05862c09bba446eab4cb4af795d2c751">deferral_term</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="><span class="selected-value select-value-color-blue">0</span></td><td class="cell-i@`L"><span class="selected-value select-value-color-brown">drop_hardship</span></td><td class="cell-vObD">Amount of months that the borrower is expected to pay less than the contractual monthly payment amount due to a hardship plan</td><td class="cell-IImX"></td></tr><tr id="0af1b18a-e6a4-44ff-819c-870a62f5e0f6"><td class="cell-title"><a href="https://www.notion.so/hardship_amount-0af1b18ae6a444ff819c870a62f5e0f6">hardship_amount</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-brown">drop_hardship</span></td><td class="cell-vObD">The interest payment that the borrower has committed to make each month while they are on a hardship plan</td><td class="cell-IImX"></td></tr><tr id="0e59f831-0d5c-481c-a681-8b5b4a9c35f2"><td class="cell-title"><a href="https://www.notion.so/hardship_type-0e59f8310d5c481ca6818b5b4a9c35f2">hardship_type</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-brown">drop_hardship</span></td><td class="cell-vObD">Describes the hardship plan offering</td><td class="cell-IImX"></td></tr><tr id="26f767bf-4f1d-43d0-bd71-0da5b3fac08c"><td class="cell-title"><a href="https://www.notion.so/payment_plan_start_date-26f767bf4f1d43d0bd710da5b3fac08c">payment_plan_start_date</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-brown">drop_hardship</span></td><td class="cell-vObD">The day the first hardship plan payment is due. For example, if a borrower has a hardship plan period of 3 months, the start date is the start of the three-month period in which the borrower is allowed to make interest-only payments.</td><td class="cell-IImX"></td></tr><tr id="4f0e5488-2e90-4aef-8967-14ceb1321696"><td class="cell-title"><a href="https://www.notion.so/orig_projected_additional_accrued_interest-4f0e54882e904aef896714ceb1321696">orig_projected_additional_accrued_interest</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-brown">drop_hardship</span></td><td class="cell-vObD">The original projected additional interest amount that will accrue for the given hardship payment plan as of the Hardship Start Date. This field will be null if the borrower has broken their hardship payment plan.</td><td class="cell-IImX"></td></tr><tr id="6499b03e-0256-4392-939b-a3f7142f1d14"><td class="cell-title"><a href="https://www.notion.so/hardship_payoff_balance_amount-6499b03e02564392939ba3f7142f1d14">hardship_payoff_balance_amount</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-brown">drop_hardship</span></td><td class="cell-vObD">The payoff balance amount as of the hardship plan start date</td><td class="cell-IImX"></td></tr><tr id="80d1a78a-dd9f-492a-9b7b-0851c1873f8c"><td class="cell-title"><a href="https://www.notion.so/hardship_status-80d1a78add9f492a9b7b0851c1873f8c">hardship_status</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-brown">drop_hardship</span></td><td class="cell-vObD">Describes if the hardship plan is active, pending, canceled, completed, or broken</td><td class="cell-IImX"></td></tr><tr id="8bea5503-8394-458d-97c8-fa71d5286a44"><td class="cell-title"><a href="https://www.notion.so/hardship_reason-8bea55038394458d97c8fa71d5286a44">hardship_reason</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-brown">drop_hardship</span></td><td class="cell-vObD">Describes the reason the hardship plan was offered</td><td class="cell-IImX"></td></tr><tr id="a1f687e6-4c67-45bd-8b88-f83fd48eadae"><td class="cell-title"><a href="https://www.notion.so/hardship_dpd-a1f687e64c6745bd8b88f83fd48eadae">hardship_dpd</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-brown">drop_hardship</span></td><td class="cell-vObD">Account days past due as of the hardship plan start date</td><td class="cell-IImX"></td></tr><tr id="bbaf745a-6b4e-4416-9676-dfce0b96659f"><td class="cell-title"><a href="https://www.notion.so/hardship_flag-bbaf745a6b4e44169676dfce0b96659f">hardship_flag</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-brown">drop_hardship</span></td><td class="cell-vObD">Flags whether or not the borrower is on a hardship plan</td><td class="cell-IImX"></td></tr><tr id="c247e0f2-950e-4523-af4e-b11bfa66ad3a"><td class="cell-title"><a href="https://www.notion.so/hardship_end_date-c247e0f2950e4523af4eb11bfa66ad3a">hardship_end_date</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-brown">drop_hardship</span></td><td class="cell-vObD">The end date of the hardship plan period</td><td class="cell-IImX"></td></tr><tr id="edf698cf-c9ac-4e9b-9566-2d90447aeac4"><td class="cell-title"><a href="https://www.notion.so/hardship_last_payment_amount-edf698cfc9ac4e9b95662d90447aeac4">hardship_last_payment_amount</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-brown">drop_hardship</span></td><td class="cell-vObD">The last payment amount as of the hardship plan start date</td><td class="cell-IImX"></td></tr><tr id="f148de71-acf3-41f1-915f-7a62fe7ce3a0"><td class="cell-title"><a href="https://www.notion.so/hardship_loan_status-f148de71acf341f1915f7a62fe7ce3a0">hardship_loan_status</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-brown">drop_hardship</span></td><td class="cell-vObD">Loan Status as of the hardship plan start date</td><td class="cell-IImX"></td></tr><tr id="fbb5f43a-dcb5-4f32-810d-db35e710259b"><td class="cell-title"><a href="https://www.notion.so/hardship_length-fbb5f43adcb54f32810ddb35e710259b">hardship_length</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-brown">drop_hardship</span></td><td class="cell-vObD">The number of months the borrower will make smaller payments than normally obligated due to a hardship plan</td><td class="cell-IImX"></td></tr><tr id="ffa29f28-76a8-4896-909d-b1ad4325c0d0"><td class="cell-title"><a href="https://www.notion.so/hardship_start_date-ffa29f2876a84896909db1ad4325c0d0">hardship_start_date</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-brown">drop_hardship</span></td><td class="cell-vObD">The start date of the hardship plan period</td><td class="cell-IImX"></td></tr><tr id="0be1bb86-2727-474f-8eda-431dff081418"><td class="cell-title"><a href="https://www.notion.so/total_acc-0be1bb862727474f8eda431dff081418">total_acc</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">The total number of credit lines currently in the borrower&#x27;s credit file</td><td class="cell-IImX"></td></tr><tr id="0d0dd7ad-ca0d-4648-8585-41a1ea1f1422"><td class="cell-title"><a href="https://www.notion.so/revol_bal-0d0dd7adca0d4648858541a1ea1f1422">revol_bal</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Total credit revolving balance</td><td class="cell-IImX"></td></tr><tr id="0db0501d-5ae2-41b6-bf8a-79a9b47934cd"><td class="cell-title"><a href="https://www.notion.so/delinq_2yrs-0db0501d5ae241b6bf8a79a9b47934cd">delinq_2yrs</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">The number of 30+ days past-due incidences of delinquency in the borrower&#x27;s credit file for the past 2 years</td><td class="cell-IImX"></td></tr><tr id="13ad48ff-aba9-413c-8cf5-bcb056bf691c"><td class="cell-title"><a href="https://www.notion.so/pct_tl_nvr_dlq-13ad48ffaba9413c8cf5bcb056bf691c">pct_tl_nvr_dlq</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Percent of trades never delinquent</td><td class="cell-IImX"></td></tr><tr id="1630815d-98b9-4787-ac03-5d176f65aed0"><td class="cell-title"><a href="https://www.notion.so/num_tl_op_past_12m-1630815d98b94787ac035d176f65aed0">num_tl_op_past_12m</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of accounts opened in past 12 months</td><td class="cell-IImX"></td></tr><tr id="17273cb2-cd4b-4bfb-9645-360dfb6874c0"><td class="cell-title"><a href="https://www.notion.so/tot_coll_amt-17273cb2cd4b4bfb9645360dfb6874c0">tot_coll_amt</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Total collection amounts ever owed</td><td class="cell-IImX"></td></tr><tr id="1fba824b-0a36-4c5e-ba97-7d2921114d54"><td class="cell-title"><a href="https://www.notion.so/num_bc_tl-1fba824b0a364c5eba977d2921114d54">num_bc_tl</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of bankcard accounts</td><td class="cell-IImX"></td></tr><tr id="20e98f3c-b1fa-420f-bb33-eb83551a0f3e"><td class="cell-title"><a href="https://www.notion.so/num_actv_bc_tl-20e98f3cb1fa420fbb33eb83551a0f3e">num_actv_bc_tl</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of currently active bankcard accounts</td><td class="cell-IImX"></td></tr><tr id="25f6d1c8-85b3-48a9-a253-b5c2d4c1430c"><td class="cell-title"><a href="https://www.notion.so/total_bal_il-25f6d1c885b348a9a253b5c2d4c1430c">total_bal_il</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Total current balance of all installment accounts</td><td class="cell-IImX"></td></tr><tr id="28ce0707-9553-4af9-9846-c33e1de4161a"><td class="cell-title"><a href="https://www.notion.so/mths_since_last_delinq-28ce070795534af99846c33e1de4161a">mths_since_last_delinq</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="><span class="selected-value select-value-color-blue">0</span></td><td class="cell-i@`L"><span class="selected-value select-value-color-orange">further_explore</span><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">The number of months since the borrower&#x27;s last delinquency.</td><td class="cell-IImX"></td></tr><tr id="2d14027d-4f64-453f-ab8c-023f19a949e2"><td class="cell-title"><a href="https://www.notion.so/num_sats-2d14027d4f64453fab8c023f19a949e2">num_sats</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of satisfactory accounts</td><td class="cell-IImX"></td></tr><tr id="2f807bfa-dd6e-4736-8fca-7709abc6725d"><td class="cell-title"><a href="https://www.notion.so/num_tl_90g_dpd_24m-2f807bfadd6e47368fca7709abc6725d">num_tl_90g_dpd_24m</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of accounts 90 or more days past due in last 24 months</td><td class="cell-IImX"></td></tr><tr id="33bfde81-ab42-443c-b4d0-916ef9807a04"><td class="cell-title"><a href="https://www.notion.so/mo_sin_old_rev_tl_op-33bfde81ab42443cb4d0916ef9807a04">mo_sin_old_rev_tl_op</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Months since oldest revolving account opened</td><td class="cell-IImX"></td></tr><tr id="37541484-9c7f-4d7b-85da-c48fa63e4260"><td class="cell-title"><a href="https://www.notion.so/bc_util-375414849c7f4d7b85dac48fa63e4260">bc_util</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Ratio of total current balance to high credit/credit limit for all bankcard accounts.</td><td class="cell-IImX"></td></tr><tr id="38dd4fb2-706c-4c50-ab9f-e8e2b463cfc0"><td class="cell-title"><a href="https://www.notion.so/open_acc_6m-38dd4fb2706c4c50ab9fe8e2b463cfc0">open_acc_6m</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of open trades in last 6 months</td><td class="cell-IImX"></td></tr><tr id="423667a3-ed4c-43c4-b8dc-4cc79977a1e0"><td class="cell-title"><a href="https://www.notion.so/mths_since_rcnt_il-423667a3ed4c43c4b8dc4cc79977a1e0">mths_since_rcnt_il</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-orange">further_explore</span><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Months since most recent installment accounts opened</td><td class="cell-IImX"></td></tr><tr id="46f04e6e-d83d-4b95-bb3f-2a2a3a12eb44"><td class="cell-title"><a href="https://www.notion.so/collections_12_mths_ex_med-46f04e6ed83d4b95bb3f2a2a3a12eb44">collections_12_mths_ex_med</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of collections in 12 months excluding medical collections</td><td class="cell-IImX"></td></tr><tr id="47a81dc2-c243-49f5-bb84-4d3e6df20f65"><td class="cell-title"><a href="https://www.notion.so/num_actv_rev_tl-47a81dc2c24349f5bb844d3e6df20f65">num_actv_rev_tl</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of currently active revolving trades</td><td class="cell-IImX"></td></tr><tr id="49d0ec49-2e70-4c08-833e-ed4767cdc4db"><td class="cell-title"><a href="https://www.notion.so/max_bal_bc-49d0ec492e704c08833eed4767cdc4db">max_bal_bc</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Maximum current balance owed on all revolving accounts</td><td class="cell-IImX"></td></tr><tr id="4c5c523e-fc26-416b-a664-6393ca12baff"><td class="cell-title"><a href="https://www.notion.so/mo_sin_old_il_acct-4c5c523efc26416ba6646393ca12baff">mo_sin_old_il_acct</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Months since oldest bank installment account opened</td><td class="cell-IImX"></td></tr><tr id="4ffb3413-83a1-4031-ad82-e3ba24dfade0"><td class="cell-title"><a href="https://www.notion.so/tot_cur_bal-4ffb341383a14031ad82e3ba24dfade0">tot_cur_bal</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Total current balance of all accounts</td><td class="cell-IImX"></td></tr><tr id="51b81427-0157-4149-8b31-949526b25f56"><td class="cell-title"><a href="https://www.notion.so/num_il_tl-51b81427015741498b31949526b25f56">num_il_tl</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of installment accounts</td><td class="cell-IImX"></td></tr><tr id="5be6a9b2-e7fa-4ec1-aeb3-0f531afd0236"><td class="cell-title"><a href="https://www.notion.so/il_util-5be6a9b2e7fa4ec1aeb30f531afd0236">il_util</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-orange">further_explore</span><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Ratio of total current balance to high credit/credit limit on all install acct</td><td class="cell-IImX"></td></tr><tr id="65d3da37-5c4a-464e-9ae1-07890f943ce8"><td class="cell-title"><a href="https://www.notion.so/mo_sin_rcnt_tl-65d3da375c4a464e9ae107890f943ce8">mo_sin_rcnt_tl</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Months since most recent account opened</td><td class="cell-IImX"></td></tr><tr id="686863ab-2030-4758-af78-a9a623207849"><td class="cell-title"><a href="https://www.notion.so/total_rev_hi_lim-686863ab20304758af78a9a623207849">total_rev_hi_lim</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Total revolving high credit/credit limit</td><td class="cell-IImX"></td></tr><tr id="6bd39b99-39ae-4372-9729-3e7b72714de6"><td class="cell-title"><a href="https://www.notion.so/inq_last_12m-6bd39b9939ae437297293e7b72714de6">inq_last_12m</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of credit inquiries in past 12 months</td><td class="cell-IImX"></td></tr><tr id="784a0a81-b610-439b-9db2-b739b48923c6"><td class="cell-title"><a href="https://www.notion.so/num_rev_tl_bal_gt_0-784a0a81b610439b9db2b739b48923c6">num_rev_tl_bal_gt_0</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of revolving trades with balance &gt;0</td><td class="cell-IImX"></td></tr><tr id="78e113fe-71ed-4e59-b6e9-ed15d625ccee"><td class="cell-title"><a href="https://www.notion.so/open_acc-78e113fe71ed4e59b6e9ed15d625ccee">open_acc</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">The number of open credit lines in the borrower&#x27;s credit file.</td><td class="cell-IImX"></td></tr><tr id="797d88a4-dac2-4bf1-a984-c75731f6238d"><td class="cell-title"><a href="https://www.notion.so/all_util-797d88a4dac24bf1a984c75731f6238d">all_util</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Balance to credit limit on all trades</td><td class="cell-IImX"></td></tr><tr id="7cc36b61-4ae2-4224-8591-b3170e119325"><td class="cell-title"><a href="https://www.notion.so/open_il_12m-7cc36b614ae242248591b3170e119325">open_il_12m</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of installment accounts opened in past 12 months</td><td class="cell-IImX"></td></tr><tr id="84e426b2-9aae-4c00-bd51-3028f8778db2"><td class="cell-title"><a href="https://www.notion.so/percent_bc_gt_75-84e426b29aae4c00bd513028f8778db2">percent_bc_gt_75</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Percentage of all bankcard accounts &gt; 75% of limit.</td><td class="cell-IImX"></td></tr><tr id="86392abc-4707-41e9-a016-e22706f3e8b6"><td class="cell-title"><a href="https://www.notion.so/num_rev_accts-86392abc470741e9a016e22706f3e8b6">num_rev_accts</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of revolving accounts</td><td class="cell-IImX"></td></tr><tr id="8e19125b-3595-4607-8ea8-98c17748129f"><td class="cell-title"><a href="https://www.notion.so/num_bc_sats-8e19125b359546078ea898c17748129f">num_bc_sats</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of satisfactory bankcard accounts</td><td class="cell-IImX"></td></tr><tr id="93179b04-9de7-4799-9425-dd83b9d48a7b"><td class="cell-title"><a href="https://www.notion.so/total_il_high_credit_limit-93179b049de747999425dd83b9d48a7b">total_il_high_credit_limit</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Total installment high credit/credit limit</td><td class="cell-IImX"></td></tr><tr id="971de3b6-77d6-4322-8937-300b3914a9b4"><td class="cell-title"><a href="https://www.notion.so/open_rv_24m-971de3b677d643228937300b3914a9b4">open_rv_24m</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of revolving trades opened in past 24 months</td><td class="cell-IImX"></td></tr><tr id="98cc6af0-41ac-4ae4-b915-65bf78eacd62"><td class="cell-title"><a href="https://www.notion.so/pub_rec_bankruptcies-98cc6af041ac4ae4b91565bf78eacd62">pub_rec_bankruptcies</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of public record bankruptcies</td><td class="cell-IImX"></td></tr><tr id="9d5114e5-cc00-4079-938c-ff402cf8d5ab"><td class="cell-title"><a href="https://www.notion.so/mths_since_recent_bc-9d5114e5cc004079938cff402cf8d5ab">mths_since_recent_bc</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-orange">further_explore</span><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Months since most recent bankcard account opened.</td><td class="cell-IImX"></td></tr><tr id="9dc6d473-23e1-45b2-84c5-9dcba551fb0d"><td class="cell-title"><a href="https://www.notion.so/num_tl_30dpd-9dc6d47323e145b284c59dcba551fb0d">num_tl_30dpd</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of accounts currently 30 days past due (updated in past 2 months)</td><td class="cell-IImX"></td></tr><tr id="a3f7ef8e-1c7b-457a-b861-cb9fd69bcfe0"><td class="cell-title"><a href="https://www.notion.so/total_bal_ex_mort-a3f7ef8e1c7b457ab861cb9fd69bcfe0">total_bal_ex_mort</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Total credit balance excluding mortgage</td><td class="cell-IImX"></td></tr><tr id="a7931535-5595-487b-989d-29e4a7dc90df"><td class="cell-title"><a href="https://www.notion.so/mort_acc-a79315355595487b989d29e4a7dc90df">mort_acc</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of mortgage accounts.</td><td class="cell-IImX"></td></tr><tr id="aaeeb14c-5890-4e54-a5f5-585ec130155f"><td class="cell-title"><a href="https://www.notion.so/total_bc_limit-aaeeb14c58904e54a5f5585ec130155f">total_bc_limit</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Total bankcard high credit/credit limit</td><td class="cell-IImX"></td></tr><tr id="afc0d1a0-06b5-4ae3-8df0-f988781f0ab9"><td class="cell-title"><a href="https://www.notion.so/num_op_rev_tl-afc0d1a006b54ae38df0f988781f0ab9">num_op_rev_tl</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of open revolving accounts</td><td class="cell-IImX"></td></tr><tr id="b132a989-af3a-4451-9b81-755e1a416825"><td class="cell-title"><a href="https://www.notion.so/total_cu_tl-b132a989af3a44519b81755e1a416825">total_cu_tl</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of finance trades</td><td class="cell-IImX"></td></tr><tr id="b673998a-56df-4557-84c0-453c263feba6"><td class="cell-title"><a href="https://www.notion.so/inq_last_6mths-b673998a56df455784c0453c263feba6">inq_last_6mths</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">The number of inquiries in past 6 months (excluding auto and mortgage inquiries)</td><td class="cell-IImX"></td></tr><tr id="bde8b518-1534-446d-a84b-fd993b735404"><td class="cell-title"><a href="https://www.notion.so/open_il_24m-bde8b5181534446da84bfd993b735404">open_il_24m</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of installment accounts opened in past 24 months</td><td class="cell-IImX"></td></tr><tr id="c1521de0-9481-4981-9956-489622ac45bc"><td class="cell-title"><a href="https://www.notion.so/mo_sin_rcnt_rev_tl_op-c1521de0948149819956489622ac45bc">mo_sin_rcnt_rev_tl_op</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Months since most recent revolving account opened</td><td class="cell-IImX"></td></tr><tr id="c25c82e4-07cb-4df1-a66a-545659d76ec7"><td class="cell-title"><a href="https://www.notion.so/open_rv_12m-c25c82e407cb4df1a66a545659d76ec7">open_rv_12m</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of revolving trades opened in past 12 months</td><td class="cell-IImX"></td></tr><tr id="cb0494b2-bbac-44ad-b7f1-c2035db9e69d"><td class="cell-title"><a href="https://www.notion.so/open_act_il-cb0494b2bbac44adb7f1c2035db9e69d">open_act_il</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of currently active installment trades</td><td class="cell-IImX"></td></tr><tr id="cc5f2dc9-2fa0-4f75-a380-5dabbec8b339"><td class="cell-title"><a href="https://www.notion.so/pub_rec-cc5f2dc92fa04f75a3805dabbec8b339">pub_rec</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of derogatory public records</td><td class="cell-IImX"></td></tr><tr id="dd670f65-8325-48de-a2c6-aabf573ebdd0"><td class="cell-title"><a href="https://www.notion.so/num_tl_120dpd_2m-dd670f65832548dea2c6aabf573ebdd0">num_tl_120dpd_2m</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of accounts currently 120 days past due (updated in past 2 months)</td><td class="cell-IImX"></td></tr><tr id="f85c0c58-0281-4016-ae94-b7ee7cfe3f8a"><td class="cell-title"><a href="https://www.notion.so/inq_fi-f85c0c5802814016ae94b7ee7cfe3f8a">inq_fi</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of personal finance inquiries</td><td class="cell-IImX"></td></tr><tr id="f97fe144-add9-4562-8466-99239d2e05cd"><td class="cell-title"><a href="https://www.notion.so/num_accts_ever_120_pd-f97fe144add94562846699239d2e05cd">num_accts_ever_120_pd</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Number of accounts ever 120 or more days past due</td><td class="cell-IImX"></td></tr><tr id="fffa9c4f-8baf-4948-b48d-c70c97379af8"><td class="cell-title"><a href="https://www.notion.so/mths_since_recent_inq-fffa9c4f8baf4948b48dc70c97379af8">mths_since_recent_inq</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-orange">further_explore</span><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Months since most recent inquiry.</td><td class="cell-IImX"></td></tr><tr id="56cb6eb9-f1d4-4974-b8cd-b2c0b6a42851"><td class="cell-title"><a href="https://www.notion.so/id-56cb6eb9f1d44974b8cdb2c0b6a42851">id</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-blue">meaningless</span></td><td class="cell-vObD">A unique LC assigned ID for the loan listing.</td><td class="cell-IImX"></td></tr><tr id="b11c485d-3c4a-4622-b3c8-a009b6a4cc6b"><td class="cell-title"><a href="https://www.notion.so/url-b11c485d3c4a4622b3c8a009b6a4cc6b">url</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-orange">further_explore</span><span class="selected-value select-value-color-blue">meaningless</span></td><td class="cell-vObD">URL for the LC page with listing data.</td><td class="cell-IImX"></td></tr><tr id="6767bf01-1447-46d5-93f4-c8d5f12853e3"><td class="cell-title"><a href="https://www.notion.so/issue_d-6767bf01144746d593f4c8d5f12853e3">issue_d</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-pink">leak</span></td><td class="cell-vObD">The month which the loan was funded</td><td class="cell-IImX"></td></tr><tr id="6e7d61b6-24de-46d5-b775-0629fab727f2"><td class="cell-title"><a href="https://www.notion.so/last_fico_range_high-6e7d61b624de46d5b7750629fab727f2">last_fico_range_high</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-pink">leak</span></td><td class="cell-vObD">The upper boundary range the borrower’s last FICO pulled belongs to.</td><td class="cell-IImX"></td></tr><tr id="719e27b3-3589-4571-9236-cf47f67c3683"><td class="cell-title"><a href="https://www.notion.so/recoveries-719e27b3358945719236cf47f67c3683">recoveries</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-pink">leak</span></td><td class="cell-vObD">post charge off gross recovery</td><td class="cell-IImX"></td></tr><tr id="9315f769-35c7-43a3-a39b-588e38b68984"><td class="cell-title"><a href="https://www.notion.so/total_pymnt_inv-9315f76935c743a3a39b588e38b68984">total_pymnt_inv</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-pink">leak</span></td><td class="cell-vObD">Payments received to date for portion of total amount funded by investors</td><td class="cell-IImX"></td></tr><tr id="993dec6c-4725-4536-8782-53e4de4f23d7"><td class="cell-title"><a href="https://www.notion.so/total_rec_prncp-993dec6c47254536878253e4de4f23d7">total_rec_prncp</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-pink">leak</span></td><td class="cell-vObD">Principal received to date</td><td class="cell-IImX"></td></tr><tr id="9c4d4f15-b2a8-4794-bc5f-ffbb803544b5"><td class="cell-title"><a href="https://www.notion.so/out_prncp-9c4d4f15b2a84794bc5fffbb803544b5">out_prncp</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-pink">leak</span></td><td class="cell-vObD">Remaining outstanding principal for total amount funded</td><td class="cell-IImX"></td></tr><tr id="a497d257-b0a8-4e39-9ef7-d2cfeccf9bf8"><td class="cell-title"><a href="https://www.notion.so/total_pymnt-a497d257b0a84e399ef7d2cfeccf9bf8">total_pymnt</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-pink">leak</span></td><td class="cell-vObD">Payments received to date for total amount funded</td><td class="cell-IImX"></td></tr><tr id="aba8b9fc-5fd8-439d-bb28-1aeea44cb2b7"><td class="cell-title"><a href="https://www.notion.so/out_prncp_inv-aba8b9fc5fd8439dbb281aeea44cb2b7">out_prncp_inv</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-pink">leak</span></td><td class="cell-vObD">Remaining outstanding principal for portion of total amount funded by investors</td><td class="cell-IImX"></td></tr><tr id="ad66bcc9-ad69-438b-a7e0-e01d9f0637c1"><td class="cell-title"><a href="https://www.notion.so/total_rec_int-ad66bcc9ad69438ba7e0e01d9f0637c1">total_rec_int</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-pink">leak</span></td><td class="cell-vObD">Interest received to date</td><td class="cell-IImX"></td></tr><tr id="b286088a-c989-4d08-87a1-205b08dec7aa"><td class="cell-title"><a href="https://www.notion.so/last_pymnt_d-b286088ac9894d0887a1205b08dec7aa">last_pymnt_d</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-pink">leak</span></td><td class="cell-vObD">Last month payment was received</td><td class="cell-IImX"></td></tr><tr id="bb898b43-259f-4e5e-8bdd-5502420b0aef"><td class="cell-title"><a href="https://www.notion.so/last_pymnt_amnt-bb898b43259f4e5e8bdd5502420b0aef">last_pymnt_amnt</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-pink">leak</span></td><td class="cell-vObD">Last total payment amount received</td><td class="cell-IImX"></td></tr><tr id="bec5f01b-e957-4854-a7ab-2613c44b2eb1"><td class="cell-title"><a href="https://www.notion.so/loan_status-bec5f01be9574854a7ab2613c44b2eb1">loan_status</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-pink">leak</span></td><td class="cell-vObD">Current status of the loan</td><td class="cell-IImX"></td></tr><tr id="c729cae7-ccdb-4585-ae7d-3a93d88a53b3"><td class="cell-title"><a href="https://www.notion.so/last_fico_range_low-c729cae7ccdb4585ae7d3a93d88a53b3">last_fico_range_low</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-pink">leak</span></td><td class="cell-vObD">The lower boundary range the borrower’s last FICO pulled belongs to.</td><td class="cell-IImX"></td></tr><tr id="c77bd0be-6248-4b41-8b2c-ec1bfcdef2d9"><td class="cell-title"><a href="https://www.notion.so/funded_amnt_inv-c77bd0be62484b418b2cec1bfcdef2d9">funded_amnt_inv</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-pink">leak</span></td><td class="cell-vObD">The total amount committed by investors for that loan at that point in time.</td><td class="cell-IImX"></td></tr><tr id="e0875ea2-288f-40ea-a050-5023feabe08f"><td class="cell-title"><a href="https://www.notion.so/funded_amnt-e0875ea2288f40eaa0505023feabe08f">funded_amnt</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-pink">leak</span></td><td class="cell-vObD">The total amount committed to that loan at that point in time.</td><td class="cell-IImX"></td></tr><tr id="f0b0750d-f5bf-4df1-bbd5-9a206d55fbb5"><td class="cell-title"><a href="https://www.notion.so/total_rec_late_fee-f0b0750df5bf4df1bbd59a206d55fbb5">total_rec_late_fee</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-pink">leak</span></td><td class="cell-vObD">Late fees received to date</td><td class="cell-IImX"></td></tr><tr id="f80aa9a5-8e2a-46a3-8866-d7f688107c8a"><td class="cell-title"><a href="https://www.notion.so/collection_recovery_fee-f80aa9a58e2a46a38866d7f688107c8a">collection_recovery_fee</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-pink">leak</span></td><td class="cell-vObD">post charge off collection fee</td><td class="cell-IImX"></td></tr><tr id="7c649e40-bbfa-464b-8807-18a5c635bd21"><td class="cell-title"><a href="https://www.notion.so/title-7c649e40bbfa464b880718a5c635bd21">title</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">included_in_other</span></td><td class="cell-vObD">The loan title provided by the borrower</td><td class="cell-IImX">included in purpose</td></tr><tr id="874e49d2-2ae2-4a7c-b9fa-d068944d1d3a"><td class="cell-title"><a href="https://www.notion.so/grade-874e49d22ae24a7cb9fad068944d1d3a">grade</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-green">included_in_other</span></td><td class="cell-vObD">LC assigned loan grade</td><td class="cell-IImX">In sub_grade</td></tr><tr id="003f5fe5-9b88-4d55-8d31-6604cc94e28a"><td class="cell-title"><a href="https://www.notion.so/pymnt_plan-003f5fe59b884d558d316604cc94e28a">pymnt_plan</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-gray">one_value</span></td><td class="cell-vObD">Indicates if a payment plan has been put in place for the loan</td><td class="cell-IImX"></td></tr><tr id="2f50592d-35e0-44cc-a4bd-1921d9240c24"><td class="cell-title"><a href="https://www.notion.so/policy_code-2f50592d35e044cca4bd1921d9240c24">policy_code</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-gray">one_value</span></td><td class="cell-vObD">publicly available policy_code=1 new products not publicly available policy_code=2</td><td class="cell-IImX"></td></tr><tr id="b76bbab3-6074-4302-9a97-5dfbac1e5b6a"><td class="cell-title"><a href="https://www.notion.so/delinq_amnt-b76bbab3607443029a975dfbac1e5b6a">delinq_amnt</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-gray">one_value</span></td><td class="cell-vObD">The past-due amount owed for the accounts on which the borrower is now delinquent.</td><td class="cell-IImX"></td></tr><tr id="fc688462-8ea8-46b6-bb9b-1b318e0f0e49"><td class="cell-title"><a href="https://www.notion.so/tax_liens-fc6884628ea846b6bb9b1b318e0f0e49">tax_liens</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-gray">one_value</span></td><td class="cell-vObD">Number of tax liens</td><td class="cell-IImX"></td></tr><tr id="2a2d3b02-1a75-4062-9211-aae7334130da"><td class="cell-title"><a href="https://www.notion.so/revol_util-2a2d3b021a7540629211aae7334130da">revol_util</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-red">convert_to_int</span></td><td class="cell-vObD">Revolving line utilization rate, or the amount of credit the borrower is using relative to all available revolving credit.</td><td class="cell-IImX">Notice that <code>revol_util</code> column contains numeric values, but is formatted as object.</td></tr><tr id="709e7aa7-9689-4c4d-8ce0-cb2a2b4af901"><td class="cell-title"><a href="https://www.notion.so/verification_status-709e7aa796894c4d8ce0cb2a2b4af901">verification_status</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-purple">ohe_values</span></td><td class="cell-vObD">Indicates if income was verified by LC, not verified, or if the income source was verified</td><td class="cell-IImX"></td></tr><tr id="b99fd4e1-f3e2-4da0-9833-dffe0cdbd006"><td class="cell-title"><a href="https://www.notion.so/purpose-b99fd4e1f3e24da09833dffe0cdbd006">purpose</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-purple">ohe_values</span></td><td class="cell-vObD">A category provided by the borrower for the loan request.</td><td class="cell-IImX"></td></tr><tr id="5aafca7b-dfbe-434a-9736-34d66c19dcf8"><td class="cell-title"><a href="https://www.notion.so/emp_title-5aafca7bdfbe434a973634d66c19dcf8">emp_title</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-orange">further_explore</span><span class="selected-value select-value-color-yellow">ohe_top_ones</span><span class="selected-value select-value-color-purple">text_feature</span></td><td class="cell-vObD">The job title supplied by the Borrower when applying for the loan.*</td><td class="cell-IImX"></td></tr><tr id="efb4c03e-aedf-4286-8232-6b9a9c56a1e3"><td class="cell-title"><a href="https://www.notion.so/addr_state-efb4c03eaedf428682326b9a9c56a1e3">addr_state</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-orange">further_explore</span><span class="selected-value select-value-color-yellow">ohe_top_ones</span></td><td class="cell-vObD">The state provided by the borrower in the loan application</td><td class="cell-IImX"></td></tr><tr id="1fb2d82a-5283-4d48-aa9f-ed8ff29b892e"><td class="cell-title"><a href="https://www.notion.so/mths_since_last_major_derog-1fb2d82a52834d48aa9fed8ff29b892e">mths_since_last_major_derog</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="><span class="selected-value select-value-color-blue">0</span></td><td class="cell-i@`L"><span class="selected-value select-value-color-orange">further_explore</span><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Months since most recent 90-day or worse rating</td><td class="cell-IImX"></td></tr><tr id="306c2f6a-903b-4eee-b849-801689ce5606"><td class="cell-title"><a href="https://www.notion.so/mths_since_last_record-306c2f6a903b4eeeb849801689ce5606">mths_since_last_record</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="><span class="selected-value select-value-color-blue">0</span></td><td class="cell-i@`L"><span class="selected-value select-value-color-orange">further_explore</span><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">The number of months since the last public record.</td><td class="cell-IImX"></td></tr><tr id="a121c476-e7f2-4490-bffa-a8d97968c610"><td class="cell-title"><a href="https://www.notion.so/mths_since_recent_revol_delinq-a121c476e7f24490bffaa8d97968c610">mths_since_recent_revol_delinq</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-orange">further_explore</span><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Months since most recent revolving delinquency.</td><td class="cell-IImX"></td></tr><tr id="d1ca6ec2-4344-4e29-afe3-bf981dd22bbc"><td class="cell-title"><a href="https://www.notion.so/mths_since_recent_bc_dlq-d1ca6ec243444e29afe3bf981dd22bbc">mths_since_recent_bc_dlq</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-orange">further_explore</span><span class="selected-value select-value-color-green">numeric</span></td><td class="cell-vObD">Months since most recent bankcard delinquency</td><td class="cell-IImX"></td></tr><tr id="f052ea24-bcee-4252-ad2a-a8c79046417e"><td class="cell-title"><a href="https://www.notion.so/zip_code-f052ea24bcee4252ad2aa8c79046417e">zip_code</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-orange">further_explore</span></td><td class="cell-vObD">The first 3 numbers of the zip code provided by the borrower in the loan application.</td><td class="cell-IImX">mostly redundant with the addr_state column since only the first 3 digits of the 5 digit zip code are visible.</td></tr><tr id="cdfde0cb-5f63-44b5-8317-e68d0ceab379"><td class="cell-title"><a href="https://www.notion.so/debt_settlement_flag-cdfde0cb5f6344b58317e68d0ceab379">debt_settlement_flag</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-red">ATTENTION</span><span class="selected-value select-value-color-brown">to_bool</span></td><td class="cell-vObD">Flags whether or not the borrower, who has charged-off, is working with a debt-settlement company.</td><td class="cell-IImX"></td></tr><tr id="dde1178c-d332-4296-8a4a-bc9bbee6e778"><td class="cell-title"><a href="https://www.notion.so/debt_settlement_flag_date-dde1178cd33242968a4abc9bbee6e778">debt_settlement_flag_date</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-red">ATTENTION</span><span class="selected-value select-value-color-brown">day_between_loan</span></td><td class="cell-vObD">The most recent date that the Debt_Settlement_Flag has been set</td><td class="cell-IImX"></td></tr><tr id="e9d502a2-22d7-4006-9d55-e95700a8e545"><td class="cell-title"><a href="https://www.notion.so/earliest_cr_line-e9d502a222d740069d55e95700a8e545">earliest_cr_line</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-brown">day_between_loan</span></td><td class="cell-vObD">The month the borrower&#x27;s earliest reported credit line was opened</td><td class="cell-IImX"></td></tr><tr id="eeded905-737f-4f01-8aad-ce7495f6b508"><td class="cell-title"><a href="https://www.notion.so/last_credit_pull_d-eeded905737f4f018aadce7495f6b508">last_credit_pull_d</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-brown">day_between_loan</span></td><td class="cell-vObD">The most recent month LC pulled credit for this loan</td><td class="cell-IImX"></td></tr><tr id="87015b2c-1922-4922-8d64-06058afbbaf8"><td class="cell-title"><a href="https://www.notion.so/disbursement_method-87015b2c192249228d6406058afbbaf8">disbursement_method</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-default">MISSING</span></td><td class="cell-vObD">The method by which the borrower receives their loan. Possible values are: CASH, DIRECT_PAY</td><td class="cell-IImX"></td></tr><tr id="91101063-f8a2-4d38-ac82-1cdde246565a"><td class="cell-title"><a href="https://www.notion.so/settlement_amount-91101063f8a24d38ac821cdde246565a">settlement_amount</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-default">MISSING</span></td><td class="cell-vObD">The loan amount that the borrower has agreed to settle for</td><td class="cell-IImX"></td></tr><tr id="acfaaabe-58d6-4cfc-8908-06cd4e4834c0"><td class="cell-title"><a href="https://www.notion.so/verified_status_joint-acfaaabe58d64cfc890806cd4e4834c0">verified_status_joint</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-default">MISSING</span></td><td class="cell-vObD">Indicates if the co-borrowers&#x27; joint income was verified by LC, not verified, or if the income source was verified</td><td class="cell-IImX"></td></tr><tr id="ddba2184-0adf-4704-a377-5dac22fe4873"><td class="cell-title"><a href="https://www.notion.so/settlement_date-ddba21840adf4704a3775dac22fe4873">settlement_date</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-default">MISSING</span></td><td class="cell-vObD">The date that the borrower agrees to the settlement plan</td><td class="cell-IImX"></td></tr><tr id="e80b7a05-f646-4597-9121-c8cb62649407"><td class="cell-title"><a href="https://www.notion.so/sec_app_mths_since_last_major_derog-e80b7a05f64645979121c8cb62649407">sec_app_mths_since_last_major_derog</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-default">MISSING</span></td><td class="cell-vObD">Months since most recent 90-day or worse rating at time of application for the secondary applicant</td><td class="cell-IImX"></td></tr><tr id="44ba6b35-f045-44fa-ab6b-8e04eb10b3db"><td class="cell-title"><a href="https://www.notion.so/fico_range_low-44ba6b35f04544faab6b8e04eb10b3db">fico_range_low</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-yellow">to_another_col</span></td><td class="cell-vObD">The lower boundary range the borrower’s FICO at loan origination belongs to.</td><td class="cell-IImX"><code>loans_2007[&#x27;fico_average&#x27;] = (loans_2007[&#x27;fico_range_high&#x27;] + loans_2007[&#x27;fico_range_low&#x27;]) / 2</code></td></tr><tr id="5c7b960d-3379-463f-a02b-c4b5ffc7c7fc"><td class="cell-title"><a href="https://www.notion.so/fico_range_high-5c7b960d3379463fa02bc4b5ffc7c7fc">fico_range_high</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-yellow">to_another_col</span></td><td class="cell-vObD">The upper boundary range the borrower’s FICO at loan origination belongs to.</td><td class="cell-IImX"><code>loans_2007[&#x27;fico_average&#x27;] = (loans_2007[&#x27;fico_range_high&#x27;] + loans_2007[&#x27;fico_range_low&#x27;]) / 2</code></td></tr><tr id="4e0c0802-7b25-47e0-9fe8-ab28b91ee864"><td class="cell-title"><a href="https://www.notion.so/chargeoff_within_12_mths-4e0c08027b2547e09fe8ab28b91ee864">chargeoff_within_12_mths</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-purple">too_little_data</span></td><td class="cell-vObD">Number of charge-offs within 12 months</td><td class="cell-IImX"></td></tr><tr id="d07c3df0-dc9b-4c66-be04-9dcb9181ac79"><td class="cell-title"><a href="https://www.notion.so/acc_now_delinq-d07c3df0dc9b4c66be049dcb9181ac79">acc_now_delinq</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-purple">too_little_data</span></td><td class="cell-vObD">The number of accounts on which the borrower is now delinquent.</td><td class="cell-IImX"><strong>Zeros (%)</strong>99.6%</td></tr><tr id="e042778f-19a1-4a15-a87a-b77b7f7702e5"><td class="cell-title"><a href="https://www.notion.so/next_pymnt_d-e042778f19a14a15a87ab77b7f7702e5">next_pymnt_d</a></td><td class="cell-lN{W"></td><td class="cell-&gt;B^="></td><td class="cell-i@`L"><span class="selected-value select-value-color-purple">too_little_data</span></td><td class="cell-vObD">Next scheduled payment date</td><td class="cell-IImX"></td></tr></tbody></table></div><p id="d2a34433-d9de-4669-8988-cf21d7d1c106" class="">
+</p></div></article></body></html>
