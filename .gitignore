@@ -137,6 +137,7 @@ venv.bak/
 
 # mkdocs documentation
 /site
+.DS_Store
 
 # mypy
 .mypy_cache/
@@ -163,3 +164,7 @@ data/
 
 *.p
 *.pickle
+train_xgbse.ipynb
+.DS_Store
+data_reports/.DS_Store
+.DS_Store
